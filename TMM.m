@@ -11,7 +11,6 @@ barrierMin = 5; %Minimum height for the barrier
 barrierMax = 15; %Maximum height for the barrier
 %Barrier Properties -------------------------------------------------------
 V = 0.1; %Barrier Height eV
-%L = [5,7,15]; %Barrier Length nm
 L = linspace(barrierMin,barrierMax,M);
 %Particle Properties ------------------------------------------------------
 E = linspace(0,0.5, N); %Incident particle energies eV
@@ -19,17 +18,13 @@ m = 1; %Mass taken as 1
 
 %Calculation --------------------------------------------------------------
 
-%Ap0 = 1; %coefficent for positive waves
-%AnN = 0; %coefficient for negative waves
-%k1 = sqrt(2*m*E)/hBar; %First region no barrier?
-%k2 = sqrt(2*m*(E-V))/hBar; %Second Region 0.1eV
 figure;
 hold on
 AP1 = 1;
 AN3 = 0;
-T = zeros(1,N);
-for r = 1:M
-    for n = 1:N
+T = zeros(1,length(E));
+for r = 1:length(L)
+    for n = 1:length(E)
         k1 = sqrt(2*m*E(n))/hBar;
         k2 = sqrt(2*m*(E(n) - V))/hBar;
         k3 = k1;
