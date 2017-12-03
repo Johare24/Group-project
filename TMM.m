@@ -6,14 +6,14 @@ clear
 %Constants ----------------------------------------------------------------
 hBar = 1;
 N = 15000; %Energy steps
-M = 3; %Number of differnt heights for the barrier to be tested at
-barrierMin = 5; %Minimum height for the barrier
-barrierMax = 15; %Maximum height for the barrier
+M = 3; %Number of differnt lengths for the barrier to be tested at
+barrierMin = 5; %Minimum length for the barrier
+barrierMax = 15; %Maximum length for the barrier
 %Barrier Properties -------------------------------------------------------
 V = 0.1; %Barrier Height eV
 L = linspace(barrierMin,barrierMax,M);
 %Particle Properties ------------------------------------------------------
-E = linspace(0,0.5, N); %Incident particle energies eV
+E = linspace(0.01,0.5, N); %Incident particle energies eV
 m = 1; %Mass taken as 1
 
 %Calculation --------------------------------------------------------------
