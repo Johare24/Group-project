@@ -11,10 +11,11 @@ barrierMin = 5; %Minimum length for the barrier
 barrierMax = 15; %Maximum length for the barrier
 %Barrier Properties -------------------------------------------------------
 V = 0.1; %Barrier Height eV
-L = linspace(barrierMin,barrierMax,M);
+%L = linspace(barrierMin,barrierMax,M);
+L = 15;
 %Particle Properties ------------------------------------------------------
 E = linspace(0.01,0.5, N); %Incident particle energies eV
-m = 1; %Mass taken as 1
+m = 1; %Mass taken as 1 for simplicity
 
 %Calculation --------------------------------------------------------------
 
@@ -43,5 +44,6 @@ for r = 1:length(L)
     plot(E, T)
     ylabel('Transmission Probability')
     xlabel('Particle Energy')
+    Q
 end 
 
