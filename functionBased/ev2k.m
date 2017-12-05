@@ -7,7 +7,9 @@ function [kn] = ev2k(E,V)
 %constants
 m=1;
 h_bar = 1;
-
-kn = sqrt(2*m*(E - V)/h_bar);
+kn = zeros(length(V));
+for v = 1:length(V)
+    kn(v) = sqrt(2*m*(E - V(v))/h_bar);
+end 
 end
 
