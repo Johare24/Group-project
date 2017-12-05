@@ -44,6 +44,6 @@ for r = 1:length(L)
     plot(E, T)
     ylabel('Transmission Probability')
     xlabel('Particle Energy')
-    Q
+    
 end 
 
