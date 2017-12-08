@@ -18,3 +18,5 @@ for n = 1:length(E)
    T(n) = abs(AP3)^2;
 end
 plot(E, T)
+xlabel('Particle Energy')
+ylabel('Transmission Probability')
