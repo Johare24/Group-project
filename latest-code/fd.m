@@ -1,6 +1,9 @@
 function [u] = fd(E, V, x, cPlt)
 %FD returns a vector filled with wavefunctions evaluated at x_n
-%   Detailed explanation goes here
+%   The fd function will return a vector of values corresponding to the
+%   wavefunction evaluated at steps throughout the given potential. Setting
+%   the final argument to 1 will plot a figure of the particle energy vs
+%   transmission probability. eg fd(E,V,x,1).
 if nargin == 3
     cPlt = 0;
 end

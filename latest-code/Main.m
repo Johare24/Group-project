@@ -1,3 +1,4 @@
+%Main file to run for the simulation
 clear
 clf
 %Energy of incoming particle-----------------------------------------------
@@ -5,7 +6,7 @@ E = [5 10 15];
 
 %Potential Barrier---------------------------------------------------------
 
-[V, x] = barrier(-500, 100);
+[V, x] = barrier(-500, 1000);
 dx = max(x)/length(x);
 ext = 50;
 x = [x linspace(max(x)+dx, max(x)+ ext*dx, ext-1)];

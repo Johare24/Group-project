@@ -1,6 +1,9 @@
 function [T] = tm(E, V, x, cPlt)
-%TM Summary of this function goes here
-%   Detailed explanation goes here
+%TM Runs a transfer matrix simulation for a given Energy and potential fn
+%   Will return a vector of transmission probabilities given a range of
+%   energies, a potential function and an a x range. Setting the final
+%   argument to 1 will plot a figure of the particle energy vs transmission
+%   probability. eg tm(E,V,x,1). 
 if nargin == 2
     cPlt = 0;
 end

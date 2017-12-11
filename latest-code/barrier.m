@@ -2,7 +2,10 @@ function [Vx, x] = barrier(Vbias, steps, cPlt)
 %BARRIER Returns a potential function in x, for a Schottky Barrier given
 %Bias Volatge
 %   Barrier Function returns a potential function against x, modelled for a
-%   schottky barrier, using (probably) atomic units
+%   schottky barrier, using (probably) atomic units. The final value in the
+%   barrier will be a 0 as an approximation. To plot the wavefunction
+%   further, extra zeros can be added to the end of the Vx potential as
+%   long as the x array is adjusted accordingly.
 if nargin == 2
     cPlt = 0;
 end
