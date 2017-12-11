@@ -1,11 +1,11 @@
 clear
 %Particle Energies
 nE = 1000;
-E = linspace(0.01, 0.5, nE);
+E = linspace(0.1, 5, nE);
 %Barrier Properties
-V = [0,linspace(0.1,0.1, 50),0];
+[V, x] = barrier(-5,100);
 N = length(V);
-dx = 15/50;
+dx = 7/100;
 T = zeros(nE);
 for n = 1:length(E)
    k = ev2k(E(n),V);

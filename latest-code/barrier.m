@@ -7,22 +7,27 @@ if nargin == 2
     cPlt = 0;
 end
 q = 1;
-e = 1;
+e = 9.76/(4*pi);
 V_bi = 0.025;
 Nd = 3e-9;
 D = sqrt(((2*e)/(q*Nd))*(V_bi - Vbias));
+%Roots to find the turning point-------------------------------------------
 a = (Nd*q^2)/e;
 b = -D*((Nd*q^2)/e);
 c = 0;
 d = (q^2)/(16*pi*e);
-dx = 0.012;
 Xs = roots([a b c d]);
-x = linspace(Xs(2)-dx,Xs(1), steps);
-Vx = ((q.^2*Nd)./(2*e))*(D-x).^2 - (q.^2)./(16*pi*e*x);
-x = [0 x];
-Vx = [0 Vx];
+%--------------------------------------------------------------------------
+x = linspace(Xs(2),Xs(1), steps);
+dx = max(x)/length(x);
+Vx = (((q.^2*Nd)./(2*e))*(D-x).^2)/27.2;
+Vx=flip(Vx);
+x = [x]*1e-5; %converted -axis into atomic units
+x(1) = 0;
+Vx(end) = 0;
 if(cPlt == 1)
-    plot(x,Vx)
+    plot(X,Vx)
+    xlabel('Distance into Barrier / \mum ')
+    ylabel('Barrier Height / E_h')
 end
 end
-
