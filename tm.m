@@ -1,10 +1,13 @@
 function [T] = tm(E, V, x, cPlt)
-%TM Summary of this function goes here
-%   Detailed explanation goes here
-if nargin == 2
+%TM returns the Transmission Probabiliy, "T" for Energy "E" and a barrier V
+%   The tm function will return a transmission probability T, given energy
+%   E and potential barrier defined by V and x. E can be an array of values
+%   or a single value and T will be returned as an array or a number
+%   accordingly. This function uses the transfer matrix method to evaluate
+%   the Transmission probabilities.
+if nargin == 3
     cPlt = 0;
 end
-
 N = length(V);
 nE = length(E);
 steps=length(x);
